@@ -1,0 +1,46 @@
+$fontawesome-font: 'Font Awesome 5 Pro' !default;
+
+/**
+ * Usage: @include fa-icon('\f111', 8px, 400);
+ */
+@mixin fa-icon($content: '\f00c', $font-size: 12px, $font-weight: 400) {
+    font-family: $fontawesome-font;
+    font-size: $font-size;
+    font-weight: $font-weight;
+    content: $content;
+}
+
+/**
+ * Usage: @include fa-icon-light('\f111', 8px);
+ */
+@mixin fa-icon-light($content, $font-size) {
+    @include fontawesome-icon($content, $font-size, 300);
+}
+
+/**
+ * Usage: @include fa-icon-solid('\f111', 8px);
+ */
+@mixin fa-icon-solid($content, $font-size) {
+    @include fontawesome-icon($content, $font-size, 900);
+}
+
+/**
+ * DEPRECATED
+ */
+@mixin fontawesome-icon($content, $font-size, $font-weight: 400) {
+    @include fa-icon($content, $font-size, 300);
+}
+
+/**
+ * DEPRECATED
+ */
+@mixin fontawesome-icon-light($content, $font-size, $font-weight: 300) {
+    @include fa-icon($content, $font-size, 300);
+}
+
+/**
+* DEPRECATED
+ */
+@mixin fontawesome-icon-solid($content, $font-size, $font-weight: 900) {
+    @include fontawesome-icon($content, $font-size, 900);
+}

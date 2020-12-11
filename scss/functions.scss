@@ -1,0 +1,38 @@
+/**
+ * Convert a hex color to rgb.
+ * This can be useful to predefine css/scss variables dynamically.
+ *
+ * @example
+ * ```css
+ *   color: #{hexToRGB(#478CCB)};
+ *   $--color-primary-rgb: #{hexToRGB(#478CCB)};
+ * ```
+ *
+ * @output
+ * ```css
+ *   color: 71, 140, 203;
+ *   $--color-primary-rgb: 71, 140, 203;
+ * ```
+ */
+@function hexToRGB($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+/**
+ * Calculates the rem.
+ *
+ * @example
+ * ```css
+ * TODO: Create
+ * ```
+ *
+ * @output
+ * ```css
+ * TODO: Create
+ * ```
+ */
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+
+    @return $remSize * 1rem;
+}

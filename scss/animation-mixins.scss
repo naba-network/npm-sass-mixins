@@ -1,0 +1,50 @@
+/**
+ * Define cross browser animations.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include animation(jump 1s ease-out);
+ *   }
+ * ```
+ */
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+/**
+ * Define cross browser keyframes.
+ *
+ * @example
+ * ```css
+ *   @include x-keyframes(jump) {
+ *       from { top: 0; }
+ *       to { top: -10px; }
+ *   }
+ * ```
+ */
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}

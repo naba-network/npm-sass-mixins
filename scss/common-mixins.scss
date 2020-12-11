@@ -1,0 +1,179 @@
+$default-transition: all 200ms ease-in-out !default;
+
+/**
+ * Define cross browser animations.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include transition();
+ *       @include transition(all 200ms ease-out);
+ *   }
+ * ```
+ */
+@mixin transition($args: $default-transition) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+}
+
+/**
+ * Define cross browser transform.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include transform(rotate(1deg));
+ *   }
+ * ```
+ */
+@mixin transform($args...) {
+    -webkit-transform: $args;
+    -moz-transform: $args;
+    -ms-transform: $args;
+    -o-transform: $args;
+    transform: $args;
+}
+
+/**
+ * Define cross browser opacity.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include opacity(0.3);
+ *   }
+ * ```
+ */
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+/**
+ * Add cross browser font smoothing.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include fontSmooth();
+ *   }
+ * ```
+ */
+@mixin fontSmooth {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Define font size.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include fontSize(12px);
+ *   }
+ * ```
+ */
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+/**
+ * Define cross browser box shadow.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include boxShadow(0 0 30px -1px rgba(0, 0, 0, 0.1));
+ *   }
+ * ```
+ */
+@mixin boxShadow($args...) {
+    -webkit-box-shadow: $args;
+    -moz-box-shadow: $args;
+    box-shadow: $args;
+}
+
+/**
+ * Define cross browser no user selection by cursor.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include noSelect();
+ *   }
+ * ```
+ */
+@mixin noSelect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-touch-callout: none;
+    -ms-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/**
+ * Revert appearance.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include noAppearance();
+ *   }
+ * ```
+ */
+@mixin noAppearance {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+/**
+ * Define cross browser ellipsis.
+ *
+ * @example
+ * ```css
+ *   .selector {
+ *       @include ellipsis();
+ *   }
+ * ```
+ */
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+%clearfix {
+    *zoom: 1;
+
+    &:after,
+    &:before {
+        content: ' ';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+%visuallyhidden {
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip: rect(0, 0, 0, 0);
+    position: absolute;
+}

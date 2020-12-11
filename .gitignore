@@ -1,0 +1,11 @@
+# dependencies
+node_modules
+
+# compiled output
+/dist
+/css
+/.tmp
+
+# System Files
+.DS_Store
+Thumbs.db

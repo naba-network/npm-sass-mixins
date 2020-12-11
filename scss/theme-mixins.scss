@@ -1,0 +1,62 @@
+/**
+ * SCSS THEMES
+ *
+ * 1. Define variables to make the linter happy:
+ * $--color-primary: --color-primary;
+ *
+ * 2. Define a new scss map for a theme with all variables:
+ * ```css
+ * $theme-map-default: (
+ *     $--color-primary: #efefef,
+ * );
+ * ```
+ *
+ * 3. Define the theme on root level (which is the html node)
+ * ```css
+ * :root.theme-default {
+ *     @include spread-map($theme-map-default);
+ * }
+ * ```
+ *
+ * 4. Use it within your code:
+ *```css
+ * body {
+ *     background-color: theme-var($--color-primary);
+ * }
+ *```
+ */
+
+/**
+ * Creates a themes css variables map.
+ *
+ * @example
+ * ```css
+ * :root.theme-default {
+ *     @include spread-map($theme-map-default);
+ * }
+ * ```
+ */
+@mixin spread-map($map: ()) {
+    @each $key, $value in $map {
+        #{$key}: $value;
+    }
+}
+
+/**
+ * Returns a css theme variable by its name.
+ *
+ * @example
+ * ```css
+ * border-color: theme-var($--color-primary);
+ * ```
+ */
+@function theme-var($key, $fallback: null, $map: $theme-map-default) {
+    @if not map-has-key($map, $key) {
+        @error "key: #{$key}, is not a key in map: #{$map}";
+    }
+    @if ($fallback) {
+        @return var($key, $fallback);
+    } @else {
+        @return var($key);
+    }
+}
