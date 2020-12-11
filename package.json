@@ -1,6 +1,6 @@
 {
     "name": "@naba/scss-mixins",
-    "version": "0.0.2",
+    "version": "0.0.1",
     "description": "A list of useful and reusable scss / sass mixins.",
     "author": "Naba",
     "repository": {
