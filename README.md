@@ -15,7 +15,7 @@ As we don't have a public npm client yet. You have to use this workaround.
 Add this to your package.json:
 
 ```
-"@naba/anivo-callback": "git+ssh://git@github.com:naba-network/scss-mixins.git#<VERSION>",
+"@naba/scss-mixins": "git+ssh://git@github.com:naba-network/scss-mixins.git#<VERSION>",
 ```
 
 ### 2.3 Dependencies
