@@ -21,7 +21,7 @@
     "license": "MIT",
     "dependencies": {},
     "peerDependencies": {
-        "node-sass": "^5.0.0",
+        "node-sass": "^5.0.0"
     },
     "scripts": {
         "scss": "node-sass --watch scss -o dist"
