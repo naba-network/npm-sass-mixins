@@ -20,7 +20,7 @@
     ],
     "license": "MIT",
     "dependencies": {},
-    "devDependencies": {
+    "peerDependencies": {
         "node-sass": "^5.0.0",
     },
     "scripts": {
