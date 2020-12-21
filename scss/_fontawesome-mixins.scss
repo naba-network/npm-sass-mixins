@@ -1,4 +1,5 @@
 $fontawesome-font: 'Font Awesome 5 Pro' !default;
+$fontawesome-font-duotone: 'Font Awesome 5 Duotone' !default;
 
 /**
  * Usage: @include fa-icon('\f111', 8px, 400);
@@ -14,14 +15,22 @@ $fontawesome-font: 'Font Awesome 5 Pro' !default;
  * Usage: @include fa-icon-light('\f111', 8px);
  */
 @mixin fa-icon-light($content, $font-size) {
-    @include fontawesome-icon($content, $font-size, 300);
+    @include fa-icon($content, $font-size, 300);
 }
 
 /**
  * Usage: @include fa-icon-solid('\f111', 8px);
  */
 @mixin fa-icon-solid($content, $font-size) {
-    @include fontawesome-icon($content, $font-size, 900);
+    @include fa-icon($content, $font-size, 900);
+}
+
+/**
+ * Usage: @include fa-icon-duo('\f111', 8px);
+ */
+@mixin fa-icon-duo($content, $font-size) {
+    @include fa-icon($content, $font-size, 900);
+    font-family: $fontawesome-font-duotone;
 }
 
 /**

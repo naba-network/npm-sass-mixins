@@ -18,6 +18,16 @@ Add this to your package.json:
 "@naba/scss-mixins": "git+ssh://git@github.com:naba-network/scss-mixins.git#<VERSION>",
 ```
 
+### 2.2 Update version in your npm
+
+Update the version in your package.json.
+
+Then run:
+
+```
+npm update @naba/scss-mixins
+```
+
 ### 2.3 Dependencies
 
 - [SCSS/SASS](https://sass-lang.com/)
