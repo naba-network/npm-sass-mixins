@@ -123,7 +123,7 @@
     justify-content: $value;
 }
 
-//Values: flex-start | flex-end | center (default) | baseline | stretch 
+//Values: flex-start | flex-end | center (default) | baseline | stretch
 @mixin align-items($value: center) {
     @if $value == flex-start {
         -webkit-box-align: start;

@@ -4,17 +4,19 @@ $breakpoint-md: 992px !default;
 $breakpoint-sm: 768px !default;
 $breakpoint-xs: 576px !default;
 
+$breakpoint-tablet-min-width: 768px !default;
+$breakpoint-tablet-max-width: 1366px !default;
+
 /**
  * Breakpoint.
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-xlg {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-xlg {
@@ -28,12 +30,11 @@ $breakpoint-xs: 576px !default;
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-lg {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-lg {
@@ -47,12 +48,11 @@ $breakpoint-xs: 576px !default;
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-md {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-md {
@@ -66,12 +66,11 @@ $breakpoint-xs: 576px !default;
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-sm {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-sm {
@@ -85,12 +84,11 @@ $breakpoint-xs: 576px !default;
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-xs {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-xs {
@@ -104,12 +102,11 @@ $breakpoint-xs: 576px !default;
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-tablet-portrait {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-tablet-portrait {
@@ -123,12 +120,11 @@ $breakpoint-xs: 576px !default;
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-tablet-landscape {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-tablet-landscape {
@@ -142,12 +138,11 @@ $breakpoint-xs: 576px !default;
  *
  * @example
  * ```css
- * TODO: Create
- * ```
- *
- * @output
- * ```css
- * TODO: Create
+ * .selector {
+ *     @include breakpoint-phone-landscape {
+ *         height: 20px;
+ *     }
+ * }
  * ```
  */
 @mixin breakpoint-phone-landscape {

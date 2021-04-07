@@ -1,5 +1,14 @@
 $default-transition: all 200ms ease-in-out !default;
 
+//@include positionSticky;
+@mixin positionSticky {
+    position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+}
+
 /**
  * Define cross browser animations.
  *
