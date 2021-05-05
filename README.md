@@ -1,37 +1,81 @@
-# Naba - SCSS-Mixins
+# Naba Network - SCSS-Mixins
 
 ## 1. Description
 
 This project offers a bunch of easy to use and reusable cross browser scss mixins.
 
-## 2. How to use
+## 2 Dependencies
 
-### 2.1 Include it via npm
+- [SCSS/SASS](https://sass-lang.com/)
 
-*Please Note*
+## 3. How to install
 
-As we don't have a public npm client yet. You have to use this workaround.
+### 3.1 Include it via npm
 
-Add this to your package.json:
+Install it via command line:
 
 ```
-"@naba/scss-mixins": "git+ssh://git@github.com:naba-network/scss-mixins.git#<VERSION>",
+npm i @naba-network/scss-mixins
 ```
 
-### 2.2 Update version in your npm
+Or add it to your package.json manually:
+
+```
+"@naba-network/scss-mixins": "<VERSION>",
+```
+
+And run
+
+```
+npm install
+```
+
+### 3.2 Update version in your npm
 
 Update the version in your package.json.
 
 Then run:
 
 ```
-npm update @naba/scss-mixins
+npm update @naba-network/scss-mixins
 ```
 
-### 2.3 Dependencies
+## 4. Documentation
 
-- [SCSS/SASS](https://sass-lang.com/)
+### How to include it
 
-## 3. Documentation
+Once the package is installed you can include it in your SCSS files. As this is a set of mixins and functions this package will not increase your CSS file size so we recommend to include it in a very generic way like on top of your e.g. `_variables.scss` so you do not have to include it over and over again.
 
-TODO: TBD
+Simply add this line to include all mixins:
+
+```
+@import '~@naba-network/scss-mixins/scss/mixins';
+```
+
+If you only need the flexbox mixins:
+
+```
+@import '~@naba-network/scss-mixins/scss/flexbox-mixins';
+```
+
+### How to use it
+
+Once the package is included you can use each mixin and function wherever and as often as you want. Simply add a mixin to your class like this:
+
+```
+.foo-bar {
+    @include transition(all 0.25ms ease-in-out);
+}
+```
+
+The code above will produce a cross browser valid css code like this:
+
+```
+.foo-bar {
+    -webkit-transition: all 0.25ms ease-in-out;
+    -moz-transition: all 0.25ms ease-in-out;
+    -ms-transition: all 0.25ms ease-in-out;
+    -o-transition: all 0.25ms ease-in-out;
+    transition: all 0.25ms ease-in-out;
+}
+```
